@@ -16,6 +16,7 @@ func TestRsaEncrypt(t *testing.T) {
 		fmt.Println(err)
 		return
 	}
+	fmt.Println(string(pubKey))
 	pass := RsaEncrypt([]byte("love"), pubKey)
 	fmt.Println(string(pass))
 	text := RsaDecrypt(pass, prvKey)

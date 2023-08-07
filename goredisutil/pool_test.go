@@ -10,7 +10,8 @@ import (
 func TestNewRedisClients(t *testing.T) {
 	clients := NewRedisClients(&ClientConf{
 		Options: &redis.Options{
-			Addr: "127.0.0.1:6379",
+			Addr:     "127.0.0.1:6379",
+			Password: "redis-hahah@123",
 		},
 		DB: []int{0, 1, 2, 3, 4, 5},
 	})

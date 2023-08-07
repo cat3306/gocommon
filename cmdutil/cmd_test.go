@@ -1,7 +1,11 @@
 package utils
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestCmd(t *testing.T) {
-	t.Log(Cmd("cat cmd_test.go"))
+	s, _ := Cmd("cat cmd_test.go")
+	fmt.Println(s)
 }

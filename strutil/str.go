@@ -6,7 +6,7 @@ import (
 	"unsafe"
 )
 
-//zero copy
+//BytesToString zero copy
 func BytesToString(raw []byte) string {
 	return *(*string)(unsafe.Pointer(&raw))
 }
