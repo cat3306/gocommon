@@ -12,7 +12,7 @@ type Encoder interface {
 	Marshal(interface{}) ([]byte, error)
 }
 
-// YAML encoding implements ConfigEncoding
+
 type yamlEncoding struct{}
 
 func (y yamlEncoding) Unmarshal(b []byte, v interface{}) error {

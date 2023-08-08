@@ -84,6 +84,7 @@ func (d *Config) Load(fileName string, dst interface{}) error {
 	if d.etcClient != nil {
 		return d.loadConfigFromEtcd(fileName, dst)
 	}
+
 	//TODO check
 	raw, err := ioutil.ReadFile(fileName)
 	if err != nil {

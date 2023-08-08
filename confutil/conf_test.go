@@ -77,12 +77,12 @@ func TestConfigEtcdSave(t *testing.T) {
 		Class: 89,
 		Sex:   100,
 	}
-	err = c.EtcdMode(clt).Save("./haha/1.json", s)
+	err = c.EtcdMode(clt).Save("/haha/1.json", s)
 	if err != nil {
 		t.Fatal(err)
 	}
 	ss := student{}
-	err = c.Load("./haha/1.json", &ss)
+	err = c.Load("/haha/1.json", &ss)
 	if err != nil {
 		t.Fatal(err)
 	}
