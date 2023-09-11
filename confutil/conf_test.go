@@ -8,10 +8,12 @@ import (
 )
 
 type student struct {
-	Age   int    `json:"age"`
-	Name  string `json:"name"`
-	Class int    `json:"class"`
-	Sex   int    `json:"sex"`
+	Age   int      `json:"age"`
+	Name  string   `json:"name"`
+	Class int      `json:"class"`
+	Sex   int      `json:"sex"`
+	Str   []string `json:"str"`
+
 }
 
 func TestJsonSaveLoad(t *testing.T) {
@@ -22,7 +24,8 @@ func TestJsonSaveLoad(t *testing.T) {
 		Class: 18,
 		Sex:   1,
 	}
-	err := c.Save("./1.json", s)
+
+	err := c.Save("./1.json", []student{s})
 	if err != nil {
 		t.Fatal(err)
 	}

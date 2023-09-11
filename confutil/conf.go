@@ -63,7 +63,7 @@ func (d *Config) saveFileConfig(fileName string, v interface{}) error {
 	if err != nil {
 		return err
 	}
-	f, err := os.OpenFile(fileName, os.O_CREATE|os.O_RDWR, fileMod)
+	f, err := os.OpenFile(fileName, os.O_CREATE|os.O_RDWR|os.O_TRUNC, fileMod)
 	if err != nil {
 		return err
 	}
