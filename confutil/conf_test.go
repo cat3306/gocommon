@@ -13,7 +13,6 @@ type student struct {
 	Class int      `json:"class"`
 	Sex   int      `json:"sex"`
 	Str   []string `json:"str"`
-
 }
 
 func TestJsonSaveLoad(t *testing.T) {
@@ -29,13 +28,16 @@ func TestJsonSaveLoad(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	ss := student{}
+	ss := make([]student, 0)
 	err = c.Load("./1.json", &ss)
-	b1, err := json.Marshal(s)
+	if err!=nil{
+		t.Fatal(err)
+	}
+	b1, err := json.MarshalIndent([]student{s}, "", " ")
 	if err != nil {
 		t.Fatal(err)
 	}
-	b2, err := json.Marshal(ss)
+	b2, err := json.MarshalIndent(ss, "", " ")
 	if err != nil {
 		t.Fatal(err)
 	}

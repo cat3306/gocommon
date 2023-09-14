@@ -12,7 +12,6 @@ type Encoder interface {
 	Marshal(interface{}) ([]byte, error)
 }
 
-
 type yamlEncoding struct{}
 
 func (y yamlEncoding) Unmarshal(b []byte, v interface{}) error {
@@ -31,7 +30,7 @@ func (j jsonEncoding) Unmarshal(b []byte, v interface{}) error {
 }
 
 func (j jsonEncoding) Marshal(v interface{}) ([]byte, error) {
-	return json.Marshal(v)
+	return json.MarshalIndent(v, "", " ")
 }
 func file2Encoder(fileExtension string) Encoder {
 	// Lower the file extension
